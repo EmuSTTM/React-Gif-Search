@@ -1,24 +1,44 @@
-import { useState } from 'react'
+
 import './App.css';
-import ListOfGifs from './components/ListOfGifs'; 
+import SearchResults from './pages/SearchResults';
+import Home from './pages/Home'
+import Detail from './pages/Detail';
+import StaticContext from './context/StaticContext'
+import { GifsContextProvider } from './context/GifContext'
 
 import { Route } from 'wouter'
 
 function App() {
-  const [ keyword, setKeyword] = useState('Leon Kennedy')
-
   return (
-    
+    <StaticContext.Provider value={
+      {
+        name: 'nperdomodev',
+        estudiando: true,
+      }
+    }>
     <div className="App">
+      
       <section className="App-content">
+      <GifsContextProvider>
+      <Route 
+        component= {Home} 
+        path="/"  
+        />
+      
         <Route 
-        component= {ListOfGifs} 
-        path="/gif/:keyword"  
+        component= {SearchResults} 
+        path="/search/:keyword"  
+        />
+        <Route 
+        component= {Detail} 
+        path="/gif/:id"  
         />
 
-        
+      </GifsContextProvider>
       </section>
+      
     </div>
+    </StaticContext.Provider>
   );
 }
 
