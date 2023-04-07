@@ -17,10 +17,13 @@ export default function SearchResults ({params}) {
             color="black" 
            /> 
            : 
-           <>
+           <div class='App-Gifs'>
            < Seeker />
+           <h3 className="App-title">
+            {decodeURI(keyword)}
+           </h3>
            <ListOfGifs gifs={gifs} />
-           </>
+           </div>
         }
     </>
 }

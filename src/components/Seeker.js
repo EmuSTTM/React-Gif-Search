@@ -20,7 +20,7 @@ export default function Seeker () {
     
     return(
         <form onSubmit={handleSubmit}>
-        <input className="Seeker-input" placeholder="Search a gif here" onChange={handleChange}type="text" value={keyword}></input>
+        <input className="Seeker-input" placeholder="Busca tu gif aquí" onChange={handleChange}type="text" value={keyword}></input>
       </form>
     )
 }

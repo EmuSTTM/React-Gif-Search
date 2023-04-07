@@ -14,6 +14,9 @@
   padding:16px;
 }
 
+.App-Gifs{
+  width: 90vw;
+}
 a {
   color: #09f;
   font-size:25px;
@@ -23,14 +26,15 @@ a {
 ul {
   list-style: none;
   padding:0;
-  text-align: left;
 }
 
 .Link-container{
   display: flex;
   flex-direction: column;
   margin-bottom:20px;
+  width: 90vw;
 }
+
 
 .Seeker-input {
   padding: 5px 20px;
@@ -43,3 +47,9 @@ ul {
 h4{
   text-align: left;
 }
+
+li {
+  display: inline;
+  margin:10px
+}
+
