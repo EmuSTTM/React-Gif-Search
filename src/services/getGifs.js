@@ -1,9 +1,9 @@
 
 const apiKey = 'zNSQyMex1216SWzF8lfGJk9wAMVQ0Maj'
 
-export default function getGifs({keyword = 'morty'} = {}) {
+export default function getGifs({keyword = 'morty', page = 0, limit = '10'} = {}) {
     const apiURL = 
-    `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=15&offset=0&rating=r&lang=en`
+    `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=${limit}&offset=${limit * page}&rating=r&lang=en`
     
     
     
