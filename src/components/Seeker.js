@@ -1,8 +1,8 @@
 
 import { useLocation } from 'wouter'
-import { useState } from 'react'
+import { useState, memo } from 'react'
 
-export default function Seeker () {
+function Seeker () {
     const [ keyword, setKeyWord] = useState('')
     const [path, pushLocation] = useLocation()
     
@@ -24,3 +24,6 @@ export default function Seeker () {
       </form>
     )
 }
+
+
+export default memo(Seeker)
