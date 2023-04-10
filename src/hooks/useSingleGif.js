@@ -9,12 +9,18 @@ export default function useSingleGif ({ id }){
     const gifFromCache = gifs.find(thegif => thegif.id === id)
 
     const [ gif, setGif ] = useState(gifFromCache)
+    const [ isLoading, setIsLoading ] = useState(false)
     
     useEffect(()=>{
         if(!gif){
-            getSingleGif({id:id}).then(gif => setGif(gif))
+            setIsLoading(true)
+            getSingleGif({id:id})
+            .then(gif => {
+                setGif(gif)
+                setIsLoading(false)
+            })
         }
     },[gif, id])
 
-    return { gif }
+    return { gif, isLoading }
 }
