@@ -1,13 +1,16 @@
-import { useContext } from 'react'
-import GifsContext from '../context/GifContext'
+import useSingleGif from '../hooks/useSingleGif'
 import Gif  from '../components/Gif'
 
-export default function Detail ({ params }) {
-    const { gifs } = useContext(GifsContext)
-    const gif= gifs.find(thegif => thegif.id === params.id)
 
+export default function Detail  ({ params }) {
+    const {gif} = useSingleGif({id:params.id})
 
+    if (!gif ) return null
     return (
+        <>
+        <h3 className='App-title'>{gif.title}</h3>
         <Gif {...gif} />
+        </>
+
     )
 }

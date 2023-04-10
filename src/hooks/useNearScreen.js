@@ -9,7 +9,7 @@ export default function useNearScreen({distance= '100px', externalRef, once=true
         
         const onChange = (entries) => {
             const el = entries[0];
-            console.log(el.isIntersecting)
+            // console.log(el.isIntersecting)
             if(el.isIntersecting) {
                 setShow(true)
                 if(once) observer.disconnect()
