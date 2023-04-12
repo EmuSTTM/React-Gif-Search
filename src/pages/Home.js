@@ -16,6 +16,7 @@ export default function Home() {
                     <meta name="description" content='Buscador de GIFs'></meta>
             </Helmet>
             <div className="Link-container">
+                
                 < Seeker />
                 <h4>Lo último buscado</h4>
                 <ListOfGifs gifs={gifs}/>

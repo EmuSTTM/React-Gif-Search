@@ -8,8 +8,8 @@ import debounce from 'just-debounce-it'
 // import useSEO from '../hooks/useSEO'
 import { Helmet } from 'react-helmet'
 export default function SearchResults ({params}) {
-    const { keyword } = params
-    const { loading, gifs, setPage } = useGifs({ keyword })
+    const { keyword, rating } = params
+    const { loading, gifs, setPage } = useGifs({ keyword, rating })
     const externalRef = useRef()
     const { isNearScreen } = useNearScreen({ externalRef: loading ? null : externalRef, once: false })
 
@@ -46,7 +46,7 @@ export default function SearchResults ({params}) {
                 <meta name="description" content={keyword}></meta>
            </Helmet>
            <div className='App-Gifs'>
-        < Seeker />
+        < Seeker initialKeyword={keyword} initialRating={rating} />
            <h3 className="App-title">
             {decodeURI(keyword)}
            </h3>
