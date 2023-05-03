@@ -1,11 +1,22 @@
 .c-search {
-    display: flex;
-    justify-content: center;
-    padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
-    background-color: var(--theme-body-bg);
-    margin: 0 auto 30px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 30px;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  font-weight: normal;
+  width: 100%;
+  border: 0px;
+  z-index: 2;
+  position: relative;
+  height: 52px;
+  letter-spacing: 1px;
+  font-size: 18px;
   }
+
+
   
   .c-search-list {
     font-size: 16px;
@@ -29,20 +40,35 @@
   }
   
   .c-search-input {
-    font-size: 16px;
+    outline:none;
+    font-size: 18px;
     border: none;
-    padding: 6px 16px;
+    padding: 6px 4vw;
+    flex: 9;
   }
+  
 
   .c-search-button{
+    font-weight: 600;
+    flex:1;
     font-weight: bold;
     color:white;
-    background-color: #17BEBB;
+    background-color:rgb(131,58,180);;
     font-size: 16px;
     border: none;
     padding: 6px 16px;
+
   }
 
   .c-search-button:hover{
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .c-search {
+      background-color: transparent;
+    }
+    .c-search-list{
+      max-width: 55px;
+    }
   }
